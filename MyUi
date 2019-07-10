@@ -1,0 +1,62 @@
+package com.ui;
+
+import java.util.Scanner;
+
+import com.service.MyModules;
+
+public class MyUi 
+{
+	public static void main(String[] args) 
+	{
+		int ch;
+		char choice;
+		MyModules mm=new MyModules();
+		Scanner sc=new Scanner(System.in);
+		
+		do
+		{
+			System.out.println("                         JJJJJ BANK");
+			System.out.println("                        <<<<<<<>>>>>>>");
+			System.out.println("1. Create Account \n 2. Check Balance \n 3. Deposit Cash \n 4. Withdraw Cash \n 5. Fund Transfer \n 6. Print Transaction ");
+			System.out.println();
+			System.out.println("Enter Your Choice:");
+			ch=sc.nextInt();
+			
+			switch(ch) {
+			case 1:
+				mm.createAccount();
+				break;
+			case 2:
+				mm.checkBalance();
+				break;
+			case 3:
+				mm.deposit();
+				break;
+			case 4:
+				mm.withdraw();
+				break;
+			case 5:
+				mm.fundTransfer();
+				break;
+			/*case 6:
+				mm.transaction();
+				break;*/
+			case 7:
+				System.exit(0);
+			}
+			System.out.println("Do you want to continue(y/n)?");
+			choice=sc.next().charAt(0);
+			if(choice=='y' || choice=='y')
+			continue;
+			else
+			{
+				System.out.println("Thankyou..");
+				System.exit(0);
+			}
+			}while(ch != 7);
+			sc.close();
+		
+		}
+	}
+
+
