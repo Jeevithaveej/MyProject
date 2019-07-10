@@ -1,0 +1,112 @@
+package com.bean;
+
+public class MyBean 
+{
+	
+	//public static final long[] transactions = null;
+	private String name;
+	//private int accNo;
+	private long  mobNo,toAccNo,fromActNo;
+	private float balance,withdrawAmt,depositAmt,transferAmount;
+	private long accNo;
+	
+	public MyBean(long mob, long accNo, float balance, String name) 
+	{
+		
+		this.mobNo = mob;
+		this.accNo = accNo;
+		this.balance = balance;
+		this.name = name;
+	}
+	public MyBean() 
+	{
+		super();
+	}
+	
+	public MyBean(long accNo, float depositAmt) 
+	{
+		this.accNo=accNo;
+		this.depositAmt=depositAmt;
+	}
+	
+	public MyBean(float withdrawAmt,long accNo) 
+	{
+		this.withdrawAmt=withdrawAmt;
+		this.accNo=accNo;
+	}
+	
+	public MyBean(long accNo)
+	{
+		this.accNo=accNo;
+	}
+	public MyBean(long fromAccNo, long toAccNo, float transferAmount) 
+	{
+		this.fromActNo=fromAccNo;
+		this.toAccNo=toAccNo;
+		this.transferAmount=transferAmount;
+		// TODO Auto-generated constructor stub
+	}
+	/*public MyBean(String transactions)
+	{
+		MyBean.transactions[] = transactions;
+	}*/
+	public long getMobNo() {
+		return mobNo;
+	}
+	public void setMobNo(long mobNo) {
+		this.mobNo = mobNo;
+	}
+	public long getAccNo() {
+		return accNo;
+	}
+	public void setAccNo(long accNo) {
+		this.accNo = accNo;
+	}
+	public long getDestiActNo() {
+		return toAccNo;
+	}
+	public void setDestiActNo(long destiAcNo) {
+		this.toAccNo = destiAcNo;
+	}
+	public long getSrcActNo() {
+		return fromActNo;
+	}
+	public void setSrcActNo(long srcActNo) {
+		this.fromActNo = srcActNo;
+	}
+	public float getBalance() {
+		return balance;
+	}
+	public void setBalance(float balance) {
+		this.balance = balance;
+	}
+	public float getWithdrawAmt() {
+		return withdrawAmt;
+	}
+	public void setWithdrawAmt(float withdrawAmt) {
+		this.withdrawAmt = withdrawAmt;
+	}
+	public float getDepositAmt() {
+		return depositAmt;
+	}
+	public void setDepositAmt(float depositAmt) {
+		this.depositAmt = depositAmt;
+	}
+	public float getTransferAmount() {
+		return transferAmount;
+	}
+	public void setTransferAmount(float transferAmount) {
+		this.transferAmount = transferAmount;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	 
+	
+	
+	
+	
+}
