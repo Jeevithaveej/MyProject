@@ -1,0 +1,63 @@
+package com.service;
+
+import com.bean.MyBean;
+import com.dao.MyDao;
+
+public class MyService
+{
+	
+	MyDao md=new MyDao();
+	
+	public void createAccountS(MyBean beanCreateAccount)
+	{
+		md.addAccount(beanCreateAccount);
+	}
+	
+	public void checkBalanceS(MyBean checkBaln)
+	{
+		if(md.hm().isEmpty()) 
+		{
+			System.out.println("No Account Exists--Create new Account");
+		}
+		else
+		{
+			if(md.hm().containsKey(checkBaln.getAccNo()))
+				{
+					System.out.println("Your Account Balance is: " +md.hm().get(checkBaln.getAccNo()).getBalance());
+				}
+				else
+				{
+				System.out.println("No account exists.. Enter valid A/C number");
+				}
+		}
+	}
+
+	public void depSAmt(MyBean depBaln)
+	{
+		if(md.hm().isEmpty()) 
+		{
+			System.out.println("No Account Exists--Create new Account");
+		}
+		else
+			if(md.hm().containsKey(depBaln.getAccNo())) 
+				{
+					float dep = depBaln.getDepositAmt() + md.hm().get(depBaln.getAccNo()).getBalance();						
+					md.hm().get(depBaln.getAccNo()).setBalance(dep);
+					System.out.println("Deposited successfully.");
+					System.out.println("Your account balance is: " +md.hm().get(depBaln.getAccNo()).getBalance());	
+				}
+		else
+		{
+			System.out.println("No Account Exists--Create new Account");
+		}
+												
+	}
+
+	
+
+
+
+
+}
+	
+
