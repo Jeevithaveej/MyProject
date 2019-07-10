@@ -1,0 +1,26 @@
+package com.dao;
+
+import java.util.HashMap;
+
+import com.bean.MyBean;
+
+public class MyDao {
+
+	MyBean myBean;
+	
+	HashMap<Long,MyBean> hm=new HashMap<Long,MyBean>();
+
+	public void addAccount(MyBean beanObj)
+	{
+		this.myBean=beanObj;
+		hm.put(beanObj.getAccNo(),beanObj);
+	}
+	
+	public HashMap<Long, MyBean> hm()
+	{						
+		return hm;
+	}
+
+	
+
+}
